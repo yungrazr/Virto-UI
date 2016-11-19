@@ -3,13 +3,15 @@
 //
 //////////////////////////
 
-Menu menu; 
+Menu menu;
+MainUI mainUI;
 
 void setup()
 {
   size(1280,720);
   frameRate(60);
   menu = new Menu();
+  mainUI = new MainUI();
   rectMode(CENTER);
   
 }//end Setup
