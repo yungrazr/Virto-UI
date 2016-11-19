@@ -10,6 +10,7 @@ void setup()
   size(1280,720);
   frameRate(60);
   menu = new Menu();
+  rectMode(CENTER);
   
 }//end Setup
 
