@@ -5,6 +5,8 @@
 Menu menu;
 MainUI mainUI;
 boolean launch=false;
+color color1 = color(70,247,201);
+PFont font;
 
 //////////////////////////
 
