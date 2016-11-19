@@ -85,6 +85,7 @@ class Menu
         if(mouseX>x2-bWidth/2 && mouseX <x2+bWidth/2 && mouseY>y2-bHeight/2 && mouseY <y2+bHeight/2)
         {
           println("Exiting!");
+          exit();
           
         }
      }
@@ -93,5 +94,4 @@ class Menu
      text("Exit",x2-30,y2+10);
 
   }
-    
 }
