@@ -74,6 +74,27 @@ class MainUI
     line(100, height-100, x, y);
     theta += 0.02f;
     
+    //sidepanel
+    stroke(color1);
+    strokeWeight(4);
+    fill(0);
+    float x=-50;
+    float x1=200;
+    rect(x,200,x1,350,7);
+    if(mouseX>x-x1/2 && mouseX <x+x1/2 && mouseY>200-350/2 && mouseY <200+350/2)
+     {
+       println("On sidebar");
+       x=50;
+       x1=300;
+       rect(x,200,x1,350,7);
+       
+     }
+     else
+     {
+       x=-50;
+       x1=200;
+     }
+    
     
   }
   
