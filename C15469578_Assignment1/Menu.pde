@@ -15,6 +15,7 @@ class Menu
   
   public void drawMenu()
   {
+      color1=color(70,247,201);
       //draw background moving line x
       stroke(color1);
       line(xline,0,xline,height);
