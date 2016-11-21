@@ -18,6 +18,8 @@ class MainUI
   float theta;
   float lTheta;
   float x,y;
+  float sx;
+  float sx1;
   
   void drawMainUI()
   {
@@ -87,24 +89,26 @@ class MainUI
     stroke(color1);
     strokeWeight(4);
     fill(0);
-    float x=-50;
-    float x1=200;
-    rect(x,200,x1,350,7);
-    if(mouseX>x-x1/2 && mouseX <x+x1/2 && mouseY>200-350/2 && mouseY <200+350/2)
+    rect(sx,200,sx1,350,7);
+    if(mouseX>sx-(sx1)/2 && mouseX <sx+(sx1)/2 && mouseY>200-350/2 && mouseY <200+350/2)
      {
-       x=50;
-       x1=300;
-       rect(x,200,x1,350,7);
-       drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
-       drawButton(100,200,bWidth,bHeight,7,"Map",color1);
-       drawButton(100,300,bWidth,bHeight,7,"Blah",color1);
+       sx=50;
+       sx1=300;
+       if(mouseX>sx-(sx1)/2 && mouseX <sx+(sx1)/2 && mouseY>200-350/2 && mouseY <200+350/2)
+       {
+       sx=50;
+       sx1=300;
+         rect(sx,200,sx1,350,7);
+         drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
+         drawButton(100,200,bWidth,bHeight,7,"Map",color1);
+         drawButton(100,300,bWidth,bHeight,7,"Blah",color1);
+       }
      }
      else
      {
-       x=-50;
-       x1=200;
+       sx=-50;
+       sx1=200;
      }
-    
     
   }
   
