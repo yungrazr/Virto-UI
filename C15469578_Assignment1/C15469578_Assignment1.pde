@@ -8,6 +8,7 @@ Button b;
 boolean launch=false;
 color color1 = color(70,247,201);
 PFont font;
+PImage cursor;
 
 //////////////////////////
 
@@ -18,12 +19,17 @@ void setup()
   textAlign(CENTER,CENTER);
   menu = new Menu();
   mainUI = new MainUI();
+  noCursor();
+  cursor = loadImage("cur.png");
   
 }//end Setup
 
 void draw()
 {
   background(0);
+  
+  
+  
   if(launch==false)
   {
     menu.drawMenu();
@@ -33,7 +39,7 @@ void draw()
     mainUI.drawMainUI();
   }
   
-  
+  image(cursor, mouseX, mouseY);
 }//end Draw
 
 //////////////////////////
