@@ -77,7 +77,6 @@ class MainUI
      {
        ellipse(100,height-100,i,i); 
      }
-     //line(100,height-100,100,height-250);
     lTheta = theta - (250 * 0.01f);
     x = 100 + sin(lTheta) * 150 ;
     y = height-100 - cos(lTheta) * 150;
@@ -112,6 +111,8 @@ class MainUI
     
   }
   
+  //mouseDragged function used for Lever
+  //to meter the speed update the pos
   void mouseDragged()
   {
     if(mousePressed)
