@@ -95,7 +95,9 @@ class MainUI
        x=50;
        x1=300;
        rect(x,200,x1,350,7);
-       drawButton(bx,by,bWidth,bHeight,7,"Graph",color1);
+       drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
+       drawButton(100,200,bWidth,bHeight,7,"Map",color1);
+       drawButton(100,300,bWidth,bHeight,7,"Blah",color1);
      }
      else
      {
