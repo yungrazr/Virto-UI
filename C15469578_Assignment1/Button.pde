@@ -29,7 +29,7 @@ class Button
      //mouse hover over check
      if(mouseX>x-bWidth/2 && mouseX <x+bWidth/2 && mouseY>y-bHeight/2 && mouseY <y+bHeight/2)
      {
-       fill(20);
+       fill(40);
        stroke(c);
        rect(x,y,bWidth,bHeight,7);
      }
