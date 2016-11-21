@@ -89,14 +89,22 @@ class MainUI
     strokeWeight(4);
     fill(0);
     rect(sx,200,sx1,350,7);
+    pushMatrix();
+    fill(color1);
+    translate(120,100);
+    rotate(PI/2);
+    text("Sidepanel",100,100);
+    popMatrix();
+    
     if(mouseX>sx-(sx1)/2 && mouseX <sx+(sx1)/2 && mouseY>200-350/2 && mouseY <200+350/2)
      {
        sx=50;
        sx1=300;
        if(mouseX>sx-(sx1)/2 && mouseX <sx+(sx1)/2 && mouseY>200-350/2 && mouseY <200+350/2)
        {
-       sx=50;
-       sx1=300;
+         sx=50;
+         sx1=300;
+         fill(0);
          rect(sx,200,sx1,350,7);
          drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
          drawButton(100,200,bWidth,bHeight,7,"Map",color1);
