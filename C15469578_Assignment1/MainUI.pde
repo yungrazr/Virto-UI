@@ -60,8 +60,8 @@ class MainUI
      //ui draw
      strokeWeight(4);
      stroke(color1);
-     line(width,(height/2)-100,width-150,(height/2)-100);
-     line(width-150,(height/2)-100,width-150,(height/2)+100);
+     line(width,(height/2)-50,width-150,(height/2)-50);
+     line(width-150,(height/2)-50,width-150,(height/2)+100);
      line(width-150,(height/2)+100,width-350,(height/2)+250);
      line(width-350,(height/2)+250,300,(height/2)+250);
      line(width-350,(height/2)+250,width-350,height);
