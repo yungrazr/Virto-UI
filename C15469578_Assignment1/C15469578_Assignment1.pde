@@ -4,7 +4,7 @@
 
 Menu menu;
 MainUI mainUI;
-Button b1,b2,b3,b4,b5;
+Button b;
 boolean launch=false;
 color color1 = color(70,247,201);
 PFont font;
