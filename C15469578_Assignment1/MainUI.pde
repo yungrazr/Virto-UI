@@ -1,13 +1,15 @@
 class MainUI
 {
-  
+  float bWidth = 160;
+  float bHeight = 80;
   float ly=(height/2)+175;
   float lx=width-80;
   float speed=0;
   float theta;
   float lTheta;
-  float x;
-  float y;
+  float x,y;
+  float bx=100;
+  float by=100;
   
   void drawMainUI()
   {
@@ -32,13 +34,13 @@ class MainUI
      textSize(30);
      fill(color1);
      speed = map(ly,(height/2)+255, (height/2)-5, 0,1000);
-     text(String.format("Speed: %.0f", speed), width-200, height-65);
+     text(String.format("Speed: %.0f", speed), width-115, height-75);
      
      if(speed>=900)
      {
        textSize(30);
        fill(random(0,255),0,0);
-       text("HYPERDRIVE MODE",width-325,height-20);
+       text("HYPERDRIVE MODE",width-170,height-30);
        color1=color(random(0,255),0,0);
      }
      else
@@ -83,11 +85,10 @@ class MainUI
     rect(x,200,x1,350,7);
     if(mouseX>x-x1/2 && mouseX <x+x1/2 && mouseY>200-350/2 && mouseY <200+350/2)
      {
-       println("On sidebar");
        x=50;
        x1=300;
        rect(x,200,x1,350,7);
-       
+       drawButton(bx,by,bWidth,bHeight,7,"Graph",color1);
      }
      else
      {

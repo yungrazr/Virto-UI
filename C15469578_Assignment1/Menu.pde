@@ -69,20 +69,9 @@ class Menu
      font = loadFont("EarthOrbiter-60.vlw");
      textFont(font, 60);
      fill(color1);
-     text("Virto UI 2.0.1",width/3,height/3);
+     text("Virto UI 2.0.1",width/2,height/3);
      
-     //launch button
-     fill(0);
-     stroke(color1);
-     rect(x,y,bWidth,bHeight,7);
-     //hover over check
-     if(mouseX>x-bWidth/2 && mouseX <x+bWidth/2 && mouseY>y-bHeight/2 && mouseY <y+bHeight/2)
-     {
-       fill(20);
-       stroke(color1);
-       rect(x,y,bWidth,bHeight,7);
-     }
-     //mouse click and hover over check
+     drawButton(x,y,bWidth,bHeight,7.0f,"Launch",color1);
      if(mousePressed)
      {
         if(mouseX>x-bWidth/2 && mouseX <x+bWidth/2 && mouseY>y-bHeight/2 && mouseY <y+bHeight/2)
@@ -92,23 +81,7 @@ class Menu
           //move onto ui screen
         }
      }
-     textSize(30);
-     fill(color1);
-     text("Launch",x-65,y+10);
-     
-     //exit button
-     fill(0);
-     stroke(color1);
-     rect(x2,y2,bWidth,bHeight,7);
-     
-     //mouse hover over check
-     if(mouseX>x2-bWidth/2 && mouseX <x2+bWidth/2 && mouseY>y2-bHeight/2 && mouseY <y2+bHeight/2)
-     {
-       fill(20);
-       stroke(color1);
-       rect(x2,y2,bWidth,bHeight,7);
-     }
-     //mouse click & hover over check
+     drawButton(x2,y2,bWidth,bHeight,7.0f,"Exit",color1);
      if(mousePressed)
      {
         if(mouseX>x2-bWidth/2 && mouseX <x2+bWidth/2 && mouseY>y2-bHeight/2 && mouseY <y2+bHeight/2)
@@ -118,10 +91,7 @@ class Menu
           //exit program
         }
      }
-     textSize(30);
-     fill(color1);
-     text("Exit",x2-30,y2+10);
-
+     
   }//end drawMenu
   
 }//end class Menu

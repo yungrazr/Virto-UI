@@ -4,6 +4,7 @@
 
 Menu menu;
 MainUI mainUI;
+Button b1,b2,b3,b4,b5;
 boolean launch=false;
 color color1 = color(70,247,201);
 PFont font;
@@ -14,6 +15,7 @@ void setup()
 {
   size(1280,720);
   rectMode(CENTER);
+  textAlign(CENTER,CENTER);
   menu = new Menu();
   mainUI = new MainUI();
   
