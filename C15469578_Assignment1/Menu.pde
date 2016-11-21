@@ -1,3 +1,7 @@
+/*
+This is the class for the menu at the 
+beginning of the program
+*/
 class Menu
 {
   float bWidth = 160;
@@ -6,10 +10,13 @@ class Menu
   float y = height/2;
   float x2 = width/2+bWidth/1.5;
   float y2 = height/2;
+  
   float theta2;
   float theta;
-  float xline=1;
-  float yline=1;
+  
+  float xline = 1;
+  float yline = 1;
+  
   int cont=2;
   int cont2=2;
   

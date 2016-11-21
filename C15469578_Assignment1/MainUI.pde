@@ -1,21 +1,27 @@
+/*
+This is the class for the
+actual UI part of the program
+*/
 class MainUI
 {
   float bWidth = 160;
   float bHeight = 80;
-  float ly=(height/2)+175;
-  float lx=width-80;
-  float speed=0;
+  float bx = 100;
+  float by = 100;
+  
+  float ly = (height/2)+175;
+  float lx = width-80;
+  float lposx = width-60;
+  float lposy = height/2;
+  float speed = 0;
+  
   float theta;
   float lTheta;
   float x,y;
-  float bx=100;
-  float by=100;
   
   void drawMainUI()
   {
-    drawLever();
     mouseDragged();
-    
     if(keyPressed)
     {
       if(key=='0')
@@ -23,6 +29,7 @@ class MainUI
         launch=false;
       }
     }
+     drawLever(lposx,lposy,lx,ly);
      
      //rect around 'speed'
      fill(0);
@@ -105,46 +112,24 @@ class MainUI
     {
           if(mouseX>lx-80/2 && mouseX <lx+80/2 && mouseY>ly-60/2 && mouseY <ly+60/2)
           {
-            if(ly>=height/2 && ly<=(height/2)+250)
+            if(ly>=lposy && ly<=lposy+250)
             {
             ly=mouseY;
             println("Lever activated!",ly); 
             }
             //error checking to make sure lever cant move out of range
-            else if(ly<height/2)
+            else if(ly<lposy)
             {
-              ly=(height/2)+5;
+              ly=lposy+5;
             }
-            else if(ly>(height/2)+250)
+            else if(ly>lposy+250)
             {
-              ly=(height/2)+245;
+              ly=lposy+245;
               
             }
           }
     }           
   }//end mouseDragged
-  
-  void drawLever()
-  {
-    float uy=height/2;
-    float ux=width-60;
-    
-    //loop for gradient bar using multiple rects
-    for(int i=0; i<250; i+=10)
-    {
-      fill(255,i,0);
-      noStroke();
-      rect(ux,uy,30,10);
-      uy+=10;
-    }//end for
-    
-    //draw handle
-    stroke(0);
-    strokeWeight(1);
-    fill(color1);
-    rect(lx,ly,80,40);
-    
-  }//end drawLever
   
    
 }//end class MainUI
