@@ -41,7 +41,7 @@ void draw()
     mainUI.drawMainUI();
   }
   Cursor();
-  
+  println("FPS: " + frameRate);
 }//end Draw
 
 //////////////////////////

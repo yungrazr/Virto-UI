@@ -40,13 +40,13 @@ class MainUI
     
      for(int i=0;i<height;i+=height/7)
      {
-       xline2+=2.8;
+       xline2+=1;
        strokeWeight(1);
-       stroke(color1);
-       line(xline,i,xline2+500,i);
+       stroke(0,50,60);
+       line(xline,i,xline2+300,i);
        if(xline2>=width)
        {
-         xline+=2.8;
+         xline+=1;
        }
        
        if(xline>=width)
@@ -57,13 +57,13 @@ class MainUI
      }
      for(int i=0;i<width;i+=width/12)
      {
-       yline2++;
+       yline2+=0.5;
        strokeWeight(1);
-       stroke(color1);
-       line(i,yline,i,yline2+300);
+       stroke(0,50,60);
+       line(i,yline,i,yline2+150);
        if(yline2>=height)
        {
-         yline++;
+         yline+=0.5;
        }
        
        if(yline>=height)
@@ -115,18 +115,12 @@ class MainUI
     line(100, height-100, x, y);
     theta += 0.02f;
     fill(color1);
-    if(frameCount%120==0)
-    {
-      ellipse(random(0,200),random(height-150,height),2,2);
-      ellipse(random(0,200),random(height-150,height),2,2);
-      ellipse(random(0,200),random(height-150,height),2,2);
-    }
     
     //sidepanel
     stroke(color1);
     strokeWeight(4);
     fill(0);
-    rect(sx,200,sx1,350,7);
+    rect(sx,200,sx1,350,70);
     pushMatrix();
     fill(color1);
     translate(120,100);
@@ -143,7 +137,7 @@ class MainUI
          sx=50;
          sx1=300;
          fill(0);
-         rect(sx,200,sx1,350,7);
+         rect(sx,200,sx1,350,70);
          drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
          drawButton(100,200,bWidth,bHeight,7,"Map",color1);
          drawButton(100,300,bWidth,bHeight,7,"Blah",color1);
@@ -183,8 +177,6 @@ class MainUI
           }
     }           
   }//end mouseDragged
-  
-  
    
 }//end class MainUI
 
@@ -224,9 +216,6 @@ void setUIshape()
     s2.vertex(0,(height/2)+100);
     s2.vertex(0,height);
     s2.endShape(CLOSE);
-    
-    
-    
   }
 
 void drawUI()
@@ -236,20 +225,12 @@ void drawUI()
   s2.setStroke(color1);
 
     shape(s, 0,0);
+    shape(s, 15,15);
     shape(s1, 0,0);
     shape(s2, 0,0);
+    shape(s2, -15,15);
+    strokeWeight(2);
+    stroke(color1);
+    rect((width/2)-25,height-40,600,120,30);
 
 }
-
-/*ui draw
-     strokeWeight(4);
-     stroke(color1);
-     line(width,(height/2)-50,width,(height/2)-50);
-     line(width-150,(height/2)-50,width-150,(height/2)+100);
-     line(width-150,(height/2)+100,width-350,(height/2)+250);
-     line(width-350,(height/2)+250,300,(height/2)+250);
-     line(width-350,(height/2)+250,width-350,height);
-     line(300,(height/2)+250,300,(height/2)+height);
-     line(300,(height/2)+250,150,(height/2)+100);
-     line(150,(height/2)+100,0,(height/2)+100);
-     */
