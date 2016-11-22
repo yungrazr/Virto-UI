@@ -18,6 +18,8 @@ PShape s,s1,s2;
 
 void setup()
 {
+  //fullScreen();
+  frameRate(60);
   size(1280,720);
   rectMode(CENTER);
   textAlign(CENTER,CENTER);

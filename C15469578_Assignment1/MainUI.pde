@@ -75,7 +75,8 @@ class MainUI
   
      drawUI();
      drawLever(lposx,lposy,lx,ly);
-      
+     text(String.format("SYSTIME: %d: %d: %d ",hour(),minute(),second()),(width/2)-30, height-75);
+     
      //rect around 'speed'
      fill(0);
      stroke(color1);
