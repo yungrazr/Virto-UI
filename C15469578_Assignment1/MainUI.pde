@@ -38,15 +38,15 @@ class MainUI
       }
     }
     
-     for(int i=0;i<height;i+=height/6)
+     for(int i=0;i<height;i+=height/7)
      {
-       xline2+=2;
+       xline2+=2.8;
        strokeWeight(1);
        stroke(color1);
        line(xline,i,xline2+500,i);
        if(xline2>=width)
        {
-         xline+=2;
+         xline+=2.8;
        }
        
        if(xline>=width)
@@ -72,12 +72,10 @@ class MainUI
          yline2=0;
        }
      }
-    
-    
+  
      drawUI();
      drawLever(lposx,lposy,lx,ly);
-     
-     
+      
      //rect around 'speed'
      fill(0);
      stroke(color1);
@@ -239,6 +237,7 @@ void drawUI()
 
     shape(s, 0,0);
     shape(s1, 0,0);
+    shape(s2, 0,0);
 
 }
 
