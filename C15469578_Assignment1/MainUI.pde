@@ -25,6 +25,7 @@ class MainUI
   float xline2=0;
   float yline=0;
   float yline2=0;
+  PShape s,s1,s2;
   
   void drawMainUI()
   {
@@ -36,41 +37,16 @@ class MainUI
         launch=false;
       }
     }
-     drawLever(lposx,lposy,lx,ly);
-     
-     //rect around 'speed'
-     fill(0);
-     stroke(color1);
-     strokeWeight(3);
-     rect(width-115, height-75,210,40);
-     
-     //text 'speed'
-     textSize(30);
-     fill(color1);
-     speed = map(ly,(height/2)+255, (height/2)-5, 0,1000);
-     text(String.format("Speed: %.0f", speed), width-115, height-75);
-     
-     if(speed>=900)
+    
+     for(int i=0;i<height;i+=height/6)
      {
-       textSize(30);
-       fill(random(0,255),0,0);
-       text("HYPERDRIVE MODE",width-170,height-30);
-       color1=color(random(0,255),0,0);
-     }
-     else
-     {
-       color1=color(70,247,201);
-     }
-     
-     for(int i=0;i<height;i+=height/12)
-     {
-       xline2++;
+       xline2+=2;
        strokeWeight(1);
        stroke(color1);
        line(xline,i,xline2+500,i);
        if(xline2>=width)
        {
-         xline++;
+         xline+=2;
        }
        
        if(xline>=width)
@@ -96,19 +72,35 @@ class MainUI
          yline2=0;
        }
      }
+    
+    
+     drawUI();
+     drawLever(lposx,lposy,lx,ly);
      
      
-     //ui draw
-     strokeWeight(4);
+     //rect around 'speed'
+     fill(0);
      stroke(color1);
-     line(width,(height/2)-50,width-150,(height/2)-50);
-     line(width-150,(height/2)-50,width-150,(height/2)+100);
-     line(width-150,(height/2)+100,width-350,(height/2)+250);
-     line(width-350,(height/2)+250,300,(height/2)+250);
-     line(width-350,(height/2)+250,width-350,height);
-     line(300,(height/2)+250,300,(height/2)+height);
-     line(300,(height/2)+250,150,(height/2)+100);
-     line(150,(height/2)+100,0,(height/2)+100);
+     strokeWeight(3);
+     rect(width-115, height-75,210,40);
+     
+     //text 'speed'
+     textSize(30);
+     fill(color1);
+     speed = map(ly,(height/2)+255, (height/2)-5, 0,1000);
+     text(String.format("Speed: %.0f", speed), width-115, height-75);
+     
+     if(speed>=900)
+     {
+       textSize(30);
+       fill(random(0,255),0,0);
+       text("HYPERDRIVE MODE",width-170,height-30);
+       color1=color(random(0,255),0,0);
+     }
+     else
+     {
+       color1=color(70,247,201);
+     }
      
      //radar
      strokeWeight(2);
@@ -194,5 +186,71 @@ class MainUI
     }           
   }//end mouseDragged
   
+  
    
 }//end class MainUI
+
+void setUIshape()
+  {
+    s = createShape();
+    s.beginShape();
+    s.fill(0);
+    s.strokeWeight(4);
+    s.vertex(width,(height/2)-50);
+    s.vertex(width,(height/2)-50);
+    s.vertex(width-150,(height/2)-50);
+    s.vertex(width-150,(height/2)+100);
+    s.vertex(width-350,(height/2)+250);
+    s.vertex(width-350,height);
+    s.vertex(width,height);
+    s.endShape(CLOSE);
+    
+    s1 = createShape();
+    s1.beginShape();
+    s1.fill(0);
+    s1.stroke(color1);
+    s1.strokeWeight(4);
+    s1.vertex(width-350,height);
+    s1.vertex(width-350,(height/2)+250);
+    s1.vertex(300,(height/2)+250);
+    s1.vertex(300,height);
+    s1.endShape(CLOSE);
+    
+    s2 = createShape();
+    s2.beginShape();
+    s2.fill(0);
+    s2.strokeWeight(4);
+    s2.vertex(300,height);
+    s2.vertex(300,(height/2)+250);
+    s2.vertex(150,(height/2)+100);
+    s2.vertex(0,(height/2)+100);
+    s2.vertex(0,height);
+    s2.endShape(CLOSE);
+    
+    
+    
+  }
+
+void drawUI()
+{
+  s.setStroke(color1);
+  s1.setStroke(color1);
+  s2.setStroke(color1);
+
+    shape(s, 0,0);
+    shape(s1, 0,0);
+
+}
+
+/*ui draw
+     strokeWeight(4);
+     stroke(color1);
+     line(width,(height/2)-50,width,(height/2)-50);
+     line(width-150,(height/2)-50,width-150,(height/2)+100);
+     line(width-150,(height/2)+100,width-350,(height/2)+250);
+     line(width-350,(height/2)+250,300,(height/2)+250);
+     line(width-350,(height/2)+250,width-350,height);
+     line(300,(height/2)+250,300,(height/2)+height);
+     line(300,(height/2)+250,150,(height/2)+100);
+     line(150,(height/2)+100,0,(height/2)+100);
+     */

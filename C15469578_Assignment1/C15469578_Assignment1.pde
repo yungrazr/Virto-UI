@@ -12,6 +12,7 @@ color color2 = color(70,247,201);
 PFont font;
 PImage cursor;
 float theta = 0;
+PShape s,s1,s2;
 
 //////////////////////////
 
@@ -24,6 +25,7 @@ void setup()
   mainUI = new MainUI();
   noCursor();
   cursor = loadImage("cur.png");
+  setUIshape();
   
 }//end Setup
 
@@ -38,7 +40,6 @@ void draw()
   {
     mainUI.drawMainUI();
   }
-  
   Cursor();
   
 }//end Draw
