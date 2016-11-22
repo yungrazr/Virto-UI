@@ -21,6 +21,11 @@ class MainUI
   float sx;
   float sx1;
   
+  float xline=0;
+  float xline2=0;
+  float yline=0;
+  float yline2=0;
+  
   void drawMainUI()
   {
     mouseDragged();
@@ -57,6 +62,42 @@ class MainUI
        color1=color(70,247,201);
      }
      
+     for(int i=0;i<height;i+=height/12)
+     {
+       xline2++;
+       strokeWeight(1);
+       stroke(color1);
+       line(xline,i,xline2+500,i);
+       if(xline2>=width)
+       {
+         xline++;
+       }
+       
+       if(xline>=width)
+       {
+         xline=0;
+         xline2=0;
+       }
+     }
+     for(int i=0;i<width;i+=width/12)
+     {
+       yline2++;
+       strokeWeight(1);
+       stroke(color1);
+       line(i,yline,i,yline2+300);
+       if(yline2>=height)
+       {
+         yline++;
+       }
+       
+       if(yline>=height)
+       {
+         yline=0;
+         yline2=0;
+       }
+     }
+     
+     
      //ui draw
      strokeWeight(4);
      stroke(color1);
@@ -83,6 +124,13 @@ class MainUI
     stroke(color1);
     line(100, height-100, x, y);
     theta += 0.02f;
+    fill(color1);
+    if(frameCount%120==0)
+    {
+      ellipse(random(0,200),random(height-150,height),2,2);
+      ellipse(random(0,200),random(height-150,height),2,2);
+      ellipse(random(0,200),random(height-150,height),2,2);
+    }
     
     //sidepanel
     stroke(color1);

@@ -6,12 +6,12 @@ Menu menu;
 MainUI mainUI;
 Button b;
 
-boolean launch=false;
-color color1 = color(70,247,201);
+boolean launch = false;
+color color1 = color(70,247,201); // this one is changed when hyperdrive mode enables
 color color2 = color(70,247,201);
 PFont font;
 PImage cursor;
-float theta=0;
+float theta = 0;
 
 //////////////////////////
 
