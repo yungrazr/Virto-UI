@@ -2,7 +2,7 @@ class Lever
 {
   float x,y;
   float ly = (height/2)+175;
-  float lx = width-80;
+  float lx = width-50;
   
   Lever(float x, float y, float lx, float ly)
   {

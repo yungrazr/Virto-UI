@@ -10,7 +10,7 @@ class MainUI
   float by = 100;
   
   float ly = (height/2)+175;
-  float lx = width-80;
+  float lx = width-65;
   float lposx = width-60;
   float lposy = height/2;
   float speed = 0;
