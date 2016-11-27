@@ -5,15 +5,15 @@
 Menu menu;
 MainUI mainUI;
 Button b;
-Graph g;
+Planet p;
 
-ArrayList<Graph> planets = new ArrayList<Graph>();
-
+ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean launch = false;
 color color1 = color(70,247,201); // this one is changed when hyperdrive mode enables
 color color2 = color(70,247,201);
 PFont font;
 PImage cursor;
+PImage bg;
 float theta = 0;
 PShape s,s1,s2;
 Table data;
@@ -31,9 +31,12 @@ void setup()
   mainUI = new MainUI();
   noCursor();
   cursor = loadImage("cur.png");
+  bg = loadImage("pic.jpg");
   setUIshape();
   loadData();
-  listData();
+  int total = planets.size();
+  println("Total planets: " + total);
+  //listData();
   
 }//end Setup
 
@@ -75,15 +78,7 @@ void loadData()
   Table data = loadTable("pdata.csv", "header");
   for(TableRow row:data.rows())
   {
-    Graph planet = new Graph(row);
+    Planet planet = new Planet(row);
     planets.add(planet);
-  }
-}
- 
-void listData()
-{
-  for(Graph planet:planets)
-  {
-    println(planet);
   }
 }

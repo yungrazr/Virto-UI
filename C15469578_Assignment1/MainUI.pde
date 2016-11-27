@@ -4,6 +4,9 @@ actual UI part of the program
 */
 class MainUI
 {
+  boolean barchart=false;
+  boolean pInfo=false;
+  
   float bWidth = 160;
   float bHeight = 80;
   float bx = 100;
@@ -29,6 +32,7 @@ class MainUI
   
   void drawMainUI()
   {
+    image(bg,0,0);
     mouseDragged();
     if(keyPressed)
     {
@@ -42,8 +46,8 @@ class MainUI
      {
        xline2+=1;
        strokeWeight(1);
-       stroke(0,50,60);
-       line(xline,i,xline2+300,i);
+       stroke(color1);
+       line(xline,i,xline2,i);
        if(xline2>=width)
        {
          xline+=1;
@@ -59,8 +63,8 @@ class MainUI
      {
        yline2+=0.5;
        strokeWeight(1);
-       stroke(0,50,60);
-       line(i,yline,i,yline2+150);
+       stroke(color1);
+       line(i,yline,i,yline2);
        if(yline2>=height)
        {
          yline+=0.5;
@@ -139,15 +143,45 @@ class MainUI
          sx1=300;
          fill(0);
          rect(sx,200,sx1,350,70);
-         drawButton(100,100,bWidth,bHeight,7,"Graph",color1);
+         drawButton(100,100,bWidth,bHeight,7,"Chart",color1);
+         if(mousePressed)
+         {
+            if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>100-bHeight/2 && mouseY <100+bHeight/2)
+            {
+               barchart=true;
+            }
+         }
          drawButton(100,200,bWidth,bHeight,7,"Map",color1);
-         drawButton(100,300,bWidth,bHeight,7,"Blah",color1);
+         if(mousePressed)
+         {
+            if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>200-bHeight/2 && mouseY <200+bHeight/2)
+            {
+              pInfo=true;  
+            }
+         }
+         drawButton(100,300,bWidth,bHeight,7,"Back",color1);
+         if(mousePressed)
+         {
+            if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>300-bHeight/2 && mouseY <300+bHeight/2)
+            {
+               launch=false;
+            }
+         }
        }
      }
      else
      {
        sx=-50;
        sx1=200;
+     }
+     
+     if(barchart)
+     {
+       drawBarchart(300,400,30);
+     }
+     if(pInfo)
+     {
+       drawPlanetInfo(200,150);
      }
     
   }
@@ -163,7 +197,6 @@ class MainUI
             if(ly>=lposy && ly<=lposy+250)
             {
             ly=mouseY;
-            println("Lever activated!",ly); 
             }
             //error checking to make sure lever cant move out of range
             else if(ly<lposy)
@@ -178,7 +211,7 @@ class MainUI
           }
     }           
   }//end mouseDragged
-   
+  
 }//end class MainUI
 
 void setUIshape()
