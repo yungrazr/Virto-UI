@@ -5,6 +5,9 @@
 Menu menu;
 MainUI mainUI;
 Button b;
+Graph g;
+
+ArrayList<Graph> planets = new ArrayList<Graph>();
 
 boolean launch = false;
 color color1 = color(70,247,201); // this one is changed when hyperdrive mode enables
@@ -13,6 +16,7 @@ PFont font;
 PImage cursor;
 float theta = 0;
 PShape s,s1,s2;
+Table data;
 
 //////////////////////////
 
@@ -28,6 +32,8 @@ void setup()
   noCursor();
   cursor = loadImage("cur.png");
   setUIshape();
+  loadData();
+  listData();
   
 }//end Setup
 
@@ -43,7 +49,7 @@ void draw()
     mainUI.drawMainUI();
   }
   Cursor();
-  println("FPS: " + frameRate);
+  //println("FPS: " + frameRate);
 }//end Draw
 
 //////////////////////////
@@ -63,4 +69,21 @@ void Cursor()
     popMatrix();
     image(cursor, mouseX, mouseY);
 }
+
+void loadData()
+{
+  Table data = loadTable("pdata.csv", "header");
+  for(TableRow row:data.rows())
+  {
+    Graph planet = new Graph(row);
+    planets.add(planet);
+  }
+}
  
+void listData()
+{
+  for(Graph planet:planets)
+  {
+    println(planet);
+  }
+}

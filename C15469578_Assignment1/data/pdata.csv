@@ -1,7 +1,7 @@
-name,radius,dist,mass,desc
-Cesei-1,1.29,51.0,5900.0,Uninhabitable planet
-Kanei-6,2.00,39.0,6100.0,Possible signs of life with a good distance from the sun
-Lencei-12,0.80,70.0,2400.0,Small dwarf planet
-Sanei-9,5.00,130.0,8900.0,Giant planet very far out by its own
-Gesei-1,3.20,65.00,4500.0,Medium sized planet possibly habitable
-Nenei-4,2.20,39.0,5900.0,Neighbour planet to Kanei-6
+Name,Radius,Dist,Mass,Desc
+Cesei,1.29,51.0,5900.0,An uninhabitable planet
+Kanei,2.00,39.0,6100.0,Shows possible signs of life with a good distance from the sun
+Lencei,0.80,70.0,2400.0,A small dwarf planet
+Sanei,5.00,130.0,8900.0,A giant planet very far out by its own
+Gesei,3.20,65.00,4500.0,A medium sized planet possibly habitable
+Nenei,2.20,39.0,5900.0,A neighbouring planet to Kanei-6
