@@ -73,7 +73,6 @@ class Menu
     popMatrix();
     
      //title text
-     font = loadFont("EarthOrbiter-60.vlw");
      textFont(font, 60);
      fill(color1);
      text("Virto UI 2.0.1",width/2,height/3);

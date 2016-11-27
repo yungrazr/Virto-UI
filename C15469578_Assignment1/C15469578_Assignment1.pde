@@ -32,6 +32,7 @@ void setup()
   noCursor();
   cursor = loadImage("cur.png");
   bg = loadImage("pic.jpg");
+  font = loadFont("EarthOrbiter-60.vlw");
   setUIshape();
   loadData();
   int total = planets.size();
