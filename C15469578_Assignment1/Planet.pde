@@ -34,22 +34,49 @@ class Planet
   
 }
 
+
 void drawPlanetInfo(float x, float y)
 {
+  int i=0;
+  //outer rect
   fill(0);
   strokeWeight(4);
   stroke(color1);
   rect(width/2,height/3,800,height/2);
   fill(color1);
-  text("Nearby Planet Info",width/2,y);
   
-  text("Planet Name: " + planets.get(0).name, width/2,y+75);
-  text("Radius: " + planets.get(0).radius + " parsecs", width/2,y+100);
-  text("Distance: " + planets.get(0).distance + " light years", width/2,y+125);
-  text("Mass: " + planets.get(0).mass + "solar mass units", width/2,y+150);
-  text("Description: " + planets.get(0).desc, width/2,y+175);
+  //text with planet info
+  text("Info about nearby Planets",width/2,y);
+  text("Planet Name: " + planets.get(i).name, width/2,y+75);
+  text("Radius: " + planets.get(i).radius + " parsecs", width/2,y+100);
+  text("Distance: " + planets.get(i).distance + " light years", width/2,y+125);
+  text("Mass: " + planets.get(i).mass + "solar mass units", width/2,y+150);
+  text("Description: " + planets.get(i).desc, width/2,y+175);
   
-  rect((width/2)+370,(height/3)-150,10,10);
+  //exit button
+  fill(0);
+  rect((width/2)+370,(height/3)-150,20,20);
+  line((width/2)+360,(height/3)-160,(width/2)+380,(height/3)-140);
+  line((width/2)+380,(height/3)-160,(width/2)+360,(height/3)-140);
+  if(mousePressed)
+  {
+    if(mouseX>(width/2)+360 && mouseX<(width/2)+380 && mouseY>(height/3)-160 && mouseY<200+(height/3)-140)
+    {
+      mainUI.pInfo=false;  
+    }
+  }
+  
+  if(i>0)
+  {
+    triangle((width/2)-380,height/3,(width/2)-360,(height/3)-20,(width/2)-360,(height/3)+20);
+  }
+  
+  if(i<planets.size())
+  {
+    triangle((width/2)+380,height/3,(width/2)+360,(height/3)-20,(width/2)+360,(height/3)+20);
+  }
+  
+  
   
 }
 

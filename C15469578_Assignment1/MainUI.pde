@@ -151,7 +151,7 @@ class MainUI
                barchart=true;
             }
          }
-         drawButton(100,200,bWidth,bHeight,7,"Map",color1);
+         drawButton(100,200,bWidth,bHeight,7,"Planets",color1);
          if(mousePressed)
          {
             if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>200-bHeight/2 && mouseY <200+bHeight/2)
