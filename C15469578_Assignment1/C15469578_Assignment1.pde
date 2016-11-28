@@ -57,16 +57,9 @@ void draw()
   }
   else if(launch)
   {
-    smooth(4);
     mainUI.drawMainUI();
-    strokeWeight(2);
-    line(350,height-15,350,height-60);
-    line(song.bufferSize() - 150,height-15,song.bufferSize() - 150,height-60);
-    for(int i = 350; i < song.bufferSize() - 150; i++)
-    {
-      line(i, height-20 + song.left.get(i)*50, i+1, height-20 + song.left.get(i+1)*50);
-      line(i, height-45 + song.right.get(i)*50, i+1, height-45 + song.right.get(i+1)*50);
-    }
+    equalizer();
+    
   }
   Cursor();
   //println("FPS: " + frameRate);
@@ -98,4 +91,16 @@ void loadData()
     Planet planet = new Planet(row);
     planets.add(planet);
   }
+}
+
+void equalizer()
+{
+    strokeWeight(2);
+    line(350,height,350,height-80);
+    line(song.bufferSize() - 150,height,song.bufferSize() - 150,height-80);
+    for(int i = 350; i < song.bufferSize() - 150; i++)
+    {
+      line(i, height-20 + song.left.get(i)*40, i+1, height-20 + song.left.get(i+1)*50);
+      line(i, height-45 + song.right.get(i)*40, i+1, height-45 + song.right.get(i+1)*50);
+    }
 }
