@@ -166,7 +166,9 @@ class MainUI
          {
             if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>300-bHeight/2 && mouseY <300+bHeight/2)
             {
-               launch=false;
+              launch=false;
+              pInfo=false;
+              barchart=false;
             }
          }
        }

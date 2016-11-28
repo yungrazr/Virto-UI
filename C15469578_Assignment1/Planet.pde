@@ -52,7 +52,6 @@ void drawPlanetInfo(float y)
   text("Radius: " + planets.get(i).radius + " parsecs", width/2,y+100);
   text("Distance: " + planets.get(i).distance + " light years", width/2,y+125);
   text("Mass: " + planets.get(i).mass + " solar mass units", width/2,y+150);
-  textSize(24);
   text("Description: " + planets.get(i).desc, width/2,y+175);
   textSize(30);
   
