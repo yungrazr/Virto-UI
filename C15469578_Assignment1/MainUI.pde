@@ -132,7 +132,6 @@ class MainUI
     rotate(PI/2);
     text("Sidepanel",100,100);
     popMatrix();
-    
     if(mouseX>sx-(sx1)/2 && mouseX <sx+(sx1)/2 && mouseY>200-350/2 && mouseY <200+350/2)
      {
        sx=50;
@@ -181,7 +180,7 @@ class MainUI
      }
      if(pInfo)
      {
-       drawPlanetInfo(200,150);
+       drawPlanetInfo(150);
      }
     
   }

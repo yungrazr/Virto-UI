@@ -32,10 +32,11 @@ class Planet
   }
   
   
-}
+}//end class Planet
 
-int i=0;
-void drawPlanetInfo(float x, float y)
+int i=0; //index used to navigate between the planets
+
+void drawPlanetInfo(float y)
 {
   //outer rect
   fill(0);
@@ -53,6 +54,7 @@ void drawPlanetInfo(float x, float y)
   text("Mass: " + planets.get(i).mass + " solar mass units", width/2,y+150);
   textSize(24);
   text("Description: " + planets.get(i).desc, width/2,y+175);
+  textSize(30);
   
   //exit button
   fill(0);
@@ -78,7 +80,6 @@ void drawPlanetInfo(float x, float y)
       }
     }
   }
-  
   if(i<planets.size()-1)
   {
     triangle((width/2)+380,height/3,(width/2)+360,(height/3)-20,(width/2)+360,(height/3)+20);
@@ -91,9 +92,7 @@ void drawPlanetInfo(float x, float y)
     }
   }
   
-  
-  
-}
+}//end drawPlanetInfo
 
 
 void drawBarchart(float x, float y, float bWidth)
@@ -118,4 +117,6 @@ void drawBarchart(float x, float y, float bWidth)
       x+=bWidth+2;
       rectMode(CENTER); 
     }
+    
+    
 }

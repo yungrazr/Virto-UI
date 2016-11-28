@@ -35,9 +35,8 @@ void setup()
   font = loadFont("EarthOrbiter-60.vlw");
   setUIshape();
   loadData();
-  int total = planets.size();
-  println("Total planets: " + total);
-  //listData();
+  //int total = planets.size();
+  //println("Total planets: " + total);
   
 }//end Setup
 
