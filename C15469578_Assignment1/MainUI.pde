@@ -176,7 +176,7 @@ class MainUI
      
      if(barchart)
      {
-       drawBarchart(300,400,30);
+       drawBarchart(250,300,30);
      }
      if(pInfo)
      {

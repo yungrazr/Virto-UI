@@ -98,25 +98,47 @@ void drawPlanetInfo(float y)
 void drawBarchart(float x, float y, float bWidth)
   {
     float maxRadius=0;
+    float maxDistance=0;
+    float maxMass=0;
+    //outer rect
+    fill(0);
+    strokeWeight(4);
+    stroke(color1);
+    rect(width/2,height/3,900,height/2);
+    fill(color1);
     
+    for(Planet planet:planets)
+    {
+      if(planet.distance>maxDistance)
+      {
+        maxDistance = planet.distance;
+      } 
+    }
+    for(Planet planet:planets)
+    {
+      if(planet.mass>maxMass)
+      {
+        maxMass = planet.mass;
+      } 
+    }
     for(Planet planet:planets)
     {
       if(planet.radius>maxRadius)
       {
-        maxRadius = planet.mass;
+        maxRadius = planet.radius;
       } 
     }
+    
+    text("Radius",x+(bWidth*planets.size())/2, y+25);
     
     for(Planet planet:planets)
     {
       rectMode(BOTTOM);
-      float bHeight = map(planet.mass, 0, maxRadius, 0,height/5);
+      float bHeight = map(planet.radius, 0, maxRadius, 0,height/5);
       fill(color1);
       noStroke();
       rect(x,y,x+bWidth,y-bHeight);
       x+=bWidth+2;
       rectMode(CENTER); 
     }
-    
-    
 }

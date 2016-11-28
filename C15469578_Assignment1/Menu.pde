@@ -77,6 +77,7 @@ class Menu
      fill(color1);
      text("Virto UI 2.0.1",width/2,height/3);
      
+     //button method to draw the buttons
      drawButton(x,y,bWidth,bHeight,7.0f,"Launch",color1);
      if(mousePressed)
      {
@@ -97,7 +98,6 @@ class Menu
           //exit program
         }
      }
-     
   }//end drawMenu
   
 }//end class Menu
