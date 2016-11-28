@@ -12,3 +12,5 @@ MainUI is the GUI part of the project, consisting of some sci-fi spaceship-cockp
 There's a sidepanel on the left side to allow acces to a few more options, such as planet info/statistics, which are read from a .csv file.
 
 Minim lib was used to provide some cool space music, and for an equalizer in MainUI.
+
+Link to YouTube video demo: https://www.youtube.com/watch?v=aKWrRfMezSs
