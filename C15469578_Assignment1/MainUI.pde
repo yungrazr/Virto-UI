@@ -81,6 +81,7 @@ class MainUI
      drawLever(lposx,lposy,lx,ly);
      text(String.format("SYSTIME: %d: %d: %d ",hour(),minute(),second()),(width/2)-30, height-75);
      
+     
      //rect around 'speed'
      fill(0);
      stroke(color1);
@@ -178,7 +179,7 @@ class MainUI
      
      if(barchart)
      {
-       drawBarchart(250,300,30);
+       drawBarchart(275,325,30);
      }
      if(pInfo)
      {

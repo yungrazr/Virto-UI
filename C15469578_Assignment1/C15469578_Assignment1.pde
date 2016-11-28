@@ -1,3 +1,5 @@
+import ddf.minim.*;
+
 //OOP ASSIGNMENT 1 
 //C15469578 DANIEL VEGERA
 //////////////////////////
@@ -6,6 +8,8 @@ Menu menu;
 MainUI mainUI;
 Button b;
 Planet p;
+Minim minim;
+AudioPlayer song;
 
 ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean launch = false;
@@ -25,14 +29,18 @@ void setup()
   //fullScreen();
   frameRate(60);
   size(1280,720);
+  smooth(4);
   rectMode(CENTER);
   textAlign(CENTER,CENTER);
   menu = new Menu();
   mainUI = new MainUI();
+  minim = new Minim(this);
   noCursor();
   cursor = loadImage("cur.png");
   bg = loadImage("pic.jpg");
   font = loadFont("EarthOrbiter-60.vlw");
+  song = minim.loadFile("starmoods.mp3");
+  song.play();
   setUIshape();
   loadData();
   //int total = planets.size();
@@ -49,7 +57,16 @@ void draw()
   }
   else if(launch)
   {
+    smooth(4);
     mainUI.drawMainUI();
+    strokeWeight(2);
+    line(350,height-15,350,height-60);
+    line(song.bufferSize() - 150,height-15,song.bufferSize() - 150,height-60);
+    for(int i = 350; i < song.bufferSize() - 150; i++)
+    {
+      line(i, height-20 + song.left.get(i)*50, i+1, height-20 + song.left.get(i+1)*50);
+      line(i, height-45 + song.right.get(i)*50, i+1, height-45 + song.right.get(i+1)*50);
+    }
   }
   Cursor();
   //println("FPS: " + frameRate);

@@ -42,7 +42,7 @@ void drawPlanetInfo(float y)
   fill(0);
   strokeWeight(4);
   stroke(color1);
-  rect(width/2,height/3,900,height/2);
+  rect(width/2,height/3,825,height/2);
   fill(color1);
   
   //text with planet info
@@ -104,7 +104,7 @@ void drawBarchart(float x, float y, float bWidth)
     fill(0);
     strokeWeight(4);
     stroke(color1);
-    rect(width/2,height/3,900,height/2);
+    rect(width/2,height/3,825,height/2);
     fill(color1);
     text("Planet data barcharts",width/2,height/2-250);
     
@@ -141,7 +141,7 @@ void drawBarchart(float x, float y, float bWidth)
       x+=bWidth+2;
       rectMode(CENTER); 
     }
-    x+=100;
+    x+=80;
     
     text("Distance",x+(bWidth*planets.size())/2, y+25);
     for(Planet planet:planets)
@@ -154,7 +154,7 @@ void drawBarchart(float x, float y, float bWidth)
       x+=bWidth+2;
       rectMode(CENTER); 
     }
-    x+=100;
+    x+=80;
     
     text("Mass",x+(bWidth*planets.size())/2, y+25);
     for(Planet planet:planets)
