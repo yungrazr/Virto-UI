@@ -57,8 +57,7 @@ void drawPlanetInfo(float y)
   textSize(30);
   
   //exit button
-  fill(0);
-  rect((width/2)+370,(height/3)-150,20,20);
+  stroke(color1);
   line((width/2)+360,(height/3)-160,(width/2)+380,(height/3)-140);
   line((width/2)+380,(height/3)-160,(width/2)+360,(height/3)-140);
   if(mousePressed)
@@ -97,6 +96,7 @@ void drawPlanetInfo(float y)
 
 void drawBarchart(float x, float y, float bWidth)
   {
+    
     float maxRadius=0;
     float maxDistance=0;
     float maxMass=0;
@@ -106,6 +106,7 @@ void drawBarchart(float x, float y, float bWidth)
     stroke(color1);
     rect(width/2,height/3,900,height/2);
     fill(color1);
+    text("Planet data barcharts",width/2,height/2-250);
     
     for(Planet planet:planets)
     {
@@ -130,7 +131,6 @@ void drawBarchart(float x, float y, float bWidth)
     }
     
     text("Radius",x+(bWidth*planets.size())/2, y+25);
-    
     for(Planet planet:planets)
     {
       rectMode(BOTTOM);
@@ -141,4 +141,43 @@ void drawBarchart(float x, float y, float bWidth)
       x+=bWidth+2;
       rectMode(CENTER); 
     }
+    x+=100;
+    
+    text("Distance",x+(bWidth*planets.size())/2, y+25);
+    for(Planet planet:planets)
+    {
+      rectMode(BOTTOM);
+      float bHeight = map(planet.distance, 0, maxDistance, 0,height/5);
+      fill(color1);
+      noStroke();
+      rect(x,y,x+bWidth,y-bHeight);
+      x+=bWidth+2;
+      rectMode(CENTER); 
+    }
+    x+=100;
+    
+    text("Mass",x+(bWidth*planets.size())/2, y+25);
+    for(Planet planet:planets)
+    {
+      rectMode(BOTTOM);
+      float bHeight = map(planet.mass, 0, maxMass, 0,height/5);
+      fill(color1);
+      noStroke();
+      rect(x,y,x+bWidth,y-bHeight);
+      x+=bWidth+2;
+      rectMode(CENTER); 
+    }
+    
+    //exit button
+    stroke(color1);
+    line((width/2)+360,(height/3)-160,(width/2)+380,(height/3)-140);
+    line((width/2)+380,(height/3)-160,(width/2)+360,(height/3)-140);
+    if(mousePressed)
+    {
+      if(mouseX>(width/2)+360 && mouseX<(width/2)+380 && mouseY>(height/3)-160 && mouseY<(height/3)-140)
+      {
+        mainUI.barchart=false;  
+      }
+    }
+    
 }

@@ -148,6 +148,7 @@ class MainUI
             if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>100-bHeight/2 && mouseY <100+bHeight/2)
             {
                barchart=true;
+               pInfo=false;
             }
          }
          drawButton(100,200,bWidth,bHeight,7,"Planets",color1);
@@ -155,7 +156,8 @@ class MainUI
          {
             if(mouseX>100-bWidth/2 && mouseX <100+bWidth/2 && mouseY>200-bHeight/2 && mouseY <200+bHeight/2)
             {
-              pInfo=true;  
+              pInfo=true;
+              barchart=false;
             }
          }
          drawButton(100,300,bWidth,bHeight,7,"Back",color1);
@@ -180,7 +182,7 @@ class MainUI
      }
      if(pInfo)
      {
-       drawPlanetInfo(150);
+       drawPlanetInfo(150);  
      }
     
   }
