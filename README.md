@@ -1,7 +1,6 @@
-#Sci-Fi UI
+#OOP Assignment 1 - Sci-Fi UI
 
 [![Video](http://img.youtube.com/vi/aKWrRfMezSs/0.jpg)](http://www.youtube.com/watch?v=aKWrRfMezSs)
-
 
 This is my first assignment project for OOP Year2, made in Processing.
 
@@ -18,3 +17,9 @@ There's a sidepanel on the left side to allow acces to a few more options, such 
 Minim lib was used to provide some cool space music, and for an equalizer in MainUI.
 
 Link to YouTube video demo: https://www.youtube.com/watch?v=aKWrRfMezSs
+
+Screenshots:
+
+![alt text](https://github.com/yungrazr/OOP_Assignment1/blob/master/Screenshot_2.png "Screenshot 1")
+
+![alt text](https://github.com/yungrazr/OOP_Assignment1/blob/master/Screenshot_3.png "Screenshot 2")
