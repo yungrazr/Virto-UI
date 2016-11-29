@@ -76,7 +76,8 @@ void drawPlanetInfo(float y)
     triangle((width/2)-380,height/3,(width/2)-360,(height/3)-20,(width/2)-360,(height/3)+20);
     if(mousePressed || keyPressed)
     {
-      if(mouseX>(width/2)-380 && mouseX<(width/2)-360 && mouseY>(height/3)-20 && mouseY<(height/3)+20  && millis() - 200 > lastClicked || key == CODED && keyCode ==LEFT)
+      if(mouseX>(width/2)-380 && mouseX<(width/2)-360 && mouseY>(height/3)-20 && mouseY<(height/3)+20  
+      && millis() - 200 > lastClicked || key == CODED && keyCode ==LEFT)
       {
         lastClicked = millis();
         i--;
@@ -88,7 +89,8 @@ void drawPlanetInfo(float y)
     triangle((width/2)+380,height/3,(width/2)+360,(height/3)-20,(width/2)+360,(height/3)+20);
     if(mousePressed || keyPressed)
     {
-      if(mouseX>(width/2)+360 && mouseX<(width/2)+380 && mouseY>(height/3)-20 && mouseY<(height/3)+20 && millis() - 200 > lastClicked || key == CODED && keyCode ==RIGHT)
+      if(mouseX>(width/2)+360 && mouseX<(width/2)+380 && mouseY>(height/3)-20 && mouseY<(height/3)+20 
+      && millis() - 200 > lastClicked || key == CODED && keyCode ==RIGHT)
       {
         lastClicked = millis();
         i++;  

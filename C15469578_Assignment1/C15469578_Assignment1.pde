@@ -1,9 +1,8 @@
-import ddf.minim.*;
-
 //OOP ASSIGNMENT 1 
 //C15469578 DANIEL VEGERA
 //////////////////////////
 
+import ddf.minim.*;
 Menu menu;
 MainUI mainUI;
 Button b;
@@ -45,7 +44,6 @@ void setup()
   loadData();
   //int total = planets.size();
   //println("Total planets: " + total);
-  
 }//end Setup
 
 void draw()
@@ -81,7 +79,7 @@ void Cursor()
     rect(0,0,10,10);   
     popMatrix();
     image(cursor, mouseX, mouseY);
-}
+}//end cursor
 
 //function to read in data from .csv
 void loadData()
@@ -92,7 +90,7 @@ void loadData()
     Planet planet = new Planet(row);
     planets.add(planet);
   }
-}
+}//end loadData
 
 //line animation synced to music used in mainUI
 void equalizer()
@@ -105,4 +103,4 @@ void equalizer()
       line(i, height-20 + song.left.get(i)*40, i+1, height-20 + song.left.get(i+1)*50);
       line(i, height-45 + song.right.get(i)*40, i+1, height-45 + song.right.get(i+1)*50);
     }
-}
+}//end equalizer

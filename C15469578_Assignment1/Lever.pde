@@ -11,8 +11,6 @@ class Lever
     this.lx = lx;
     this.ly = ly;
   }
-   
-  
 }//end class lever
 
 //method for drawing a lever
@@ -31,7 +29,5 @@ public void drawLever(float x, float y, float lx, float ly)
     stroke(0);
     strokeWeight(1);
     fill(color1);
-    rect(lx,ly,80,40);
-    
-    
+    rect(lx,ly,80,40);   
 }//end drawLever

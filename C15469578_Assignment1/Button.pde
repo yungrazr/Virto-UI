@@ -17,7 +17,6 @@ class Button
     this.bText=bText;
     this.c=c;
   }
-
 }//end class button
 
 //method for drawing a button
@@ -37,4 +36,4 @@ float curve, String bText, color c)
      textSize(30);
      fill(c);
      text(bText,x,y);
-}
+}//end drawButton

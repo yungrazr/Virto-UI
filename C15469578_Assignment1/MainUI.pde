@@ -182,6 +182,8 @@ class MainUI
        sx1=200;
      }
      
+     //if statements to check for booleans
+     //and drawing the correct sidepanel menu
      if(barchart)
      {
        drawBarchart(275,325,30);
@@ -194,7 +196,7 @@ class MainUI
   }
   
   //mouseDragged function used for Lever
-  //to meter the speed update the pos
+  //to meter the speed & update the pos
   void mouseDragged()
   {
     if(mousePressed)
@@ -260,7 +262,7 @@ void setUIshape()
     s2.endShape(CLOSE);
   }
 
-//draws bottom part of UI uisng the pshapes declared
+//draws bottom part of UI using the pshapes declared
 void drawUI()
 {
   s.setStroke(color1);
