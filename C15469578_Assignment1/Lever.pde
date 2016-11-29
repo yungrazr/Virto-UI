@@ -13,8 +13,9 @@ class Lever
   }
    
   
-}
+}//end class lever
 
+//method for drawing a lever
 public void drawLever(float x, float y, float lx, float ly)
 {
     //loop for gradient bar using multiple rects

@@ -18,10 +18,11 @@ class Button
     this.c=c;
   }
 
-}
+}//end class button
 
-  public void drawButton(float x, float y, float bWidth, float bHeight,
-  float curve, String bText, color c)
+//method for drawing a button
+public void drawButton(float x, float y, float bWidth, float bHeight,
+float curve, String bText, color c)
   {
      fill(0);
      stroke(c);
@@ -36,4 +37,4 @@ class Button
      textSize(30);
      fill(c);
      text(bText,x,y);
-  }
+}

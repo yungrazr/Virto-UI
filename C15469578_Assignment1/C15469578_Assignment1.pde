@@ -59,7 +59,6 @@ void draw()
   {
     mainUI.drawMainUI();
     equalizer();
-    
   }
   Cursor();
   //println("FPS: " + frameRate);
@@ -68,6 +67,7 @@ void draw()
 //////////////////////////
 //METHODS
 
+//custom cursor animation
 void Cursor()
 {
     pushMatrix();
@@ -83,6 +83,7 @@ void Cursor()
     image(cursor, mouseX, mouseY);
 }
 
+//function to read in data from .csv
 void loadData()
 {
   Table data = loadTable("pdata.csv", "header");
@@ -93,6 +94,7 @@ void loadData()
   }
 }
 
+//line animation synced to music used in mainUI
 void equalizer()
 {
     strokeWeight(2);

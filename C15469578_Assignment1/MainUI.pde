@@ -42,6 +42,7 @@ class MainUI
       }
     }
     
+    //for loops to draw the animated grid in the background
      for(int i=0;i<height;i+=height/7)
      {
        xline2+=1;
@@ -79,6 +80,7 @@ class MainUI
   
      drawUI();
      drawLever(lposx,lposy,lx,ly);
+     
      text(String.format("SYSTIME: %d: %d: %d ",hour(),minute(),second()),(width/2)-30, height-75);
      
      
@@ -94,6 +96,7 @@ class MainUI
      speed = map(ly,(height/2)+255, (height/2)-5, 0,1000);
      text(String.format("Speed: %.0f", speed), width-115, height-75);
      
+     //if speed over 900 enable "hyperdrive mode"
      if(speed>=900)
      {
        textSize(30);
@@ -218,6 +221,7 @@ class MainUI
   
 }//end class MainUI
 
+//declared pshapes to draw bottom part of UI
 void setUIshape()
   {
     s = createShape();
@@ -256,6 +260,7 @@ void setUIshape()
     s2.endShape(CLOSE);
   }
 
+//draws bottom part of UI uisng the pshapes declared
 void drawUI()
 {
   s.setStroke(color1);

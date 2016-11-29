@@ -35,8 +35,9 @@ class Planet
 }//end class Planet
 
 int i=0; //index used to navigate between the planets
-int lastClicked=0;
+int lastClicked=0; //used to time mouse clicks of arrow buttons
 
+//method for drawing the planet info screen
 void drawPlanetInfo(float y)
 {
   //outer rect
@@ -68,6 +69,8 @@ void drawPlanetInfo(float y)
     }
   }
   
+  //error checking to make sure arrow key cannot be pressed
+  //if it is at the first/last element in the arraylist
   if(i>0)
   {
     triangle((width/2)-380,height/3,(width/2)-360,(height/3)-20,(width/2)-360,(height/3)+20);
@@ -95,7 +98,7 @@ void drawPlanetInfo(float y)
   
 }//end drawPlanetInfo
 
-
+//method for drawing barchart
 void drawBarchart(float x, float y, float bWidth)
   {
     
